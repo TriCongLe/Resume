@@ -445,7 +445,7 @@
     if(reduce){ el.textContent = '$' + target.toLocaleString() + '+'; return; }
 
     function run(){
-      const duration = 2600; // slow, deliberate count-up
+      const duration = 1750; // slow, deliberate count-up
       const start = performance.now();
       function frame(now){
         const p = Math.min(1, (now - start) / duration);
