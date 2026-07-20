@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tri Cong Le — Accounting Student, University of Central Florida</title>
+<title>Le Tri Cong — Accounting Student, University of Central Florida</title>
 <meta name="description" content="Resume and portfolio of Le Tri Cong, Accounting student at UCF.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,18 +23,7 @@
   html{scroll-behavior:smooth;}
   body{
     margin:0;
-    background:
-      radial-gradient(circle at 12% 0%, rgba(27,67,50,0.05), transparent 42%),
-      radial-gradient(circle at 88% 18%, rgba(140,109,31,0.06), transparent 38%),
-      repeating-linear-gradient(
-        0deg,
-        rgba(23,33,27,0.025) 0px,
-        rgba(23,33,27,0.025) 1px,
-        transparent 1px,
-        transparent 40px
-      ),
-      var(--paper);
-    background-attachment:fixed;
+    background:var(--paper);
     color:var(--ink);
     font-family:'Inter',sans-serif;
     font-size:16px;
@@ -44,9 +33,9 @@
   ::selection{background:var(--pine);color:var(--paper);}
   a{color:var(--pine);}
   a:focus-visible, button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
- 
+
   .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
- 
+
   /* ===== Header / Statement head ===== */
   header.statement{
     padding:56px 0 0;
@@ -89,7 +78,7 @@
   }
   .contact-row a{text-decoration:none;border-bottom:1px solid var(--line);}
   .contact-row a:hover{border-color:var(--pine);}
- 
+
   /* ===== Ledger total (signature element) ===== */
   .ledger-total{
     background:var(--pine);
@@ -144,7 +133,7 @@
     margin-top:10px;
     max-width:520px;
   }
- 
+
   /* ===== Sections ===== */
   section{padding:44px 0;border-bottom:1px solid var(--line);}
   section:last-of-type{border-bottom:none;}
@@ -170,7 +159,7 @@
     max-width:64ch;
     color:var(--ink);
   }
- 
+
   /* ledger row entries */
   .entry{
     display:grid;
@@ -209,11 +198,11 @@
   }
   .entry li{margin-bottom:5px;font-size:14.5px;}
   .entry li::marker{color:var(--gold);}
- 
+
   /* row hover, spreadsheet feel */
   .entry{transition:background-color .15s ease;}
   .entry:hover{background:var(--paper-2);}
- 
+
   /* Skills as ledger table */
   .skills-table{
     display:grid;
@@ -231,7 +220,7 @@
     padding-top:2px;
   }
   .skills-table dd{margin:0;}
- 
+
   /* Footer / CTA */
   footer{padding:48px 0 64px;}
   .cta-row{
@@ -260,7 +249,7 @@
     color:var(--muted);
     font-family:'IBM Plex Mono',monospace;
   }
- 
+
   @media (max-width:560px){
     .entry{grid-template-columns:1fr;}
     .entry-date{text-align:left;padding-top:0;}
@@ -268,21 +257,36 @@
     .skills-table dt{padding-top:10px;}
     .lt-total-num{font-size:1.7rem;}
   }
- 
+
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
+  }
+
+  /* ===== Reveal / float-up animation ===== */
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity .9s cubic-bezier(.22,.61,.36,1), transform .9s cubic-bezier(.22,.61,.36,1);
+    transition-delay:var(--reveal-delay, 0s);
+  }
+  .reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
   }
 </style>
 </head>
 <body>
- 
-<header class="statement">
+
+<header class="statement reveal">
   <div class="wrap">
     <div class="statement-eyebrow">
-      <span>Résumé</span>
-      <span>Orlando, FL</span>
+      <span>Statement of Qualifications</span>
+      <span>Prepared 2026</span>
     </div>
-    <h1 class="name">Tri Cong Le</h1>
+    <h1 class="name">Le Tri Cong</h1>
     <div class="title-line">Accounting Student · University of Central Florida</div>
     <div class="contact-row">
       <span>Orlando, FL</span>
@@ -292,8 +296,8 @@
     </div>
   </div>
 </header>
- 
-<div class="ledger-total">
+
+<div class="ledger-total reveal" style="--reveal-delay:.15s">
   <div class="wrap">
     <div class="lt-label">Funds Managed &amp; Raised — Running Ledger</div>
     <div class="lt-rows">
@@ -309,15 +313,15 @@
     <div class="lt-caption">Across three organizations founded or financially managed since 2022.</div>
   </div>
 </div>
- 
+
 <main class="wrap">
- 
-  <section id="summary">
+
+  <section id="summary" class="reveal">
     <h2 class="sec-head">Summary</h2>
-    <p class="summary-text">Accounting student at the University of Central Florida with experience in budgeting, financial tracking, and organizational finance. Proficient in Microsoft Excel with strong analytical and problem-solving skills. Demonstrated ability to maintain accurate records, support financial decision-making, and manage multiple projects in fast-paced environments.</p>
+    <p class="summary-text">Accounting student at the University of Central Florida with hands-on experience in budgeting, financial tracking, and organizational finance. Proficient in Microsoft Excel with strong analytical and problem-solving skills. Proven ability to maintain accurate financial records, support data-driven decision-making, and manage multiple projects in fast-paced, deadline-driven environments.</p>
   </section>
- 
-  <section id="education">
+
+  <section id="education" class="reveal">
     <h2 class="sec-head">Education</h2>
     <div class="entry">
       <span class="entry-role">University of Central Florida, Orlando, FL</span>
@@ -325,34 +329,24 @@
       <span class="entry-sub">Bachelor of Science in Business Administration, Accounting · GPA 3.9</span>
     </div>
   </section>
- 
-  <section id="work">
+
+  <section id="work" class="reveal">
     <h2 class="sec-head">Work Experience</h2>
-    <div class="entry">
-      <span class="entry-role">Aramark — Student Worker (Dining Hall)</span>
-      <span class="entry-date">July 2026 – Present</span>
-      <span class="entry-sub">Orlando, FL</span>
-      <ul>
-        <li>Delivered customer service in a high volume dining environment while maintaining efficiency and professionalism.</li>
-        <li>Demonstrated strong communication, teamwork, and time-management skills during peak operating hours.</li>
-        <li>Assisted with daily operations while ensuring accuracy, cleanliness, and compliance with food safety standards.</li>
-      </ul>
-    </div>
     <div class="entry">
       <span class="entry-role">AEON Mall Long Bien — HR Intern</span>
       <span class="entry-date">November 2023</span>
       <span class="entry-sub">Long Bien, Hanoi, Vietnam · Multinational trading group</span>
       <ul>
-        <li>Assisted in recruitment activities including resume screening, candidate evaluation, and interview coordination.</li>
-        <li>Maintained accurate candidate records and supported administrative processes.</li>
-        <li>Developed professional communication and organizational skills through structured HR training and projects.</li>
+        <li>Assisted with recruitment activities, including resume screening, candidate evaluation, and interview coordination.</li>
+        <li>Maintained accurate candidate records and supported day-to-day administrative processes.</li>
+        <li>Built professional communication and organizational skills through structured HR training and cross-functional projects.</li>
       </ul>
     </div>
   </section>
- 
-  <section id="leadership">
+
+  <section id="leadership" class="reveal">
     <h2 class="sec-head">Leadership Experience</h2>
- 
+
     <div class="entry">
       <span class="entry-role">Vietnamese International Student Association — Founder &amp; Head of Finance</span>
       <span class="entry-date">Sep 2025 – Present</span>
@@ -364,7 +358,7 @@
         <li>Report financial status, vendor payment tracking, and budget updates to the leadership team to inform event planning decisions.</li>
       </ul>
     </div>
- 
+
     <div class="entry">
       <span class="entry-role">Mechaholic Shop — Founder &amp; Head of Finance</span>
       <span class="entry-date">Apr 2024 – Jun 2025</span>
@@ -375,7 +369,7 @@
         <li>Designed and assembled custom mechanical keyboards tailored to individual client specifications.</li>
       </ul>
     </div>
- 
+
     <div class="entry">
       <span class="entry-role">“Chong Chóng Tre” — Founder &amp; President</span>
       <span class="entry-date">Nov 2022 – Apr 2023</span>
@@ -387,8 +381,8 @@
       </ul>
     </div>
   </section>
- 
-  <section id="skills">
+
+  <section id="skills" class="reveal">
     <h2 class="sec-head">Skills</h2>
     <dl class="skills-table">
       <dt>Technical</dt>
@@ -399,37 +393,72 @@
       <dd>Native Vietnamese, Proficient English, Beginner Chinese</dd>
     </dl>
   </section>
- 
+
 </main>
- 
-<footer class="wrap">
+
+<footer class="wrap reveal">
   <div class="cta-row">
-    <a class="btn primary" href="Le-Tri-Cong_Resume.pdf" download>Download Résumé (PDF)</a>
+    <a class="btn primary" href="Le_Tri_Cong_Resume.pdf" download>Download Résumé (PDF)</a>
     <a class="btn" href="mailto:tricongle1@gmail.com">Email Me</a>
     <a class="btn" href="https://www.linkedin.com/in/tri-cong-le/" target="_blank" rel="noopener">View LinkedIn</a>
   </div>
   <div class="footer-note">Orlando, FL · 407-489-1020 · tricongle1@gmail.com</div>
 </footer>
- 
+
 <script>
-  // Count up the ledger total on load — respects reduced-motion preference
+  // Float elements up into place as they enter view (also fires for
+  // the header/ledger on initial load since they start in the viewport)
+  (function(){
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const items = document.querySelectorAll('.reveal');
+    if(reduce){
+      items.forEach(el => el.classList.add('is-visible'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(el => observer.observe(el));
+  })();
+
+  // Count up the ledger total once its section floats into view
   (function(){
     const el = document.getElementById('total-counter');
+    const ledger = document.querySelector('.ledger-total');
     const target = 2180;
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if(reduce){ el.textContent = '$' + target.toLocaleString(); return; }
-    const duration = 900;
-    const start = performance.now();
-    function frame(now){
-      const p = Math.min(1, (now - start) / duration);
-      const eased = 1 - Math.pow(1 - p, 3);
-      const val = Math.round(eased * target);
-      el.textContent = '$' + val.toLocaleString();
-      if(p < 1) requestAnimationFrame(frame);
+
+    function run(){
+      const duration = 2600; // slow, deliberate count-up
+      const start = performance.now();
+      function frame(now){
+        const p = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val = Math.round(eased * target);
+        el.textContent = '$' + val.toLocaleString();
+        if(p < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
     }
-    requestAnimationFrame(frame);
+
+    // Start counting right after the ledger card finishes floating up
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          setTimeout(run, 500);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    counterObserver.observe(ledger);
   })();
 </script>
- 
+
 </body>
 </html>
